@@ -1,0 +1,25 @@
+plugins {
+    id 'java-library'
+    id 'eclipse'
+}
+
+repositories {
+    mavenCentral()
+    // mavenLocal()
+    
+    maven {
+        url = uri("https://maven.pkg.github.com/osreboot/ridhvl2")
+        credentials {
+            username = project.findProperty("gpr.user") ?: System.getenv("USERNAME")
+            password = project.findProperty("gpr.key") ?: System.getenv("TOKEN")
+        }
+    }
+}
+
+dependencies {
+    implementation 'com.osreboot:ridhvl2:1.2.0'
+}
+
+tasks.named('test') {
+    useJUnitPlatform()
+}
