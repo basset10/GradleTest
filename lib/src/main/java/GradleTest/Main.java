@@ -25,7 +25,7 @@ public class Main extends HvlTemplateI{
     
     @Override
     public void update(float delta){
-        hvlDraw(hvlQuad(0f, 0f, HvlDisplay.getSize()), HvlColor.BLUE);
+       hvlDraw(hvlQuad(0f, 0f, HvlDisplay.getSize()), HvlColor.GREEN);
     }
 
 }
